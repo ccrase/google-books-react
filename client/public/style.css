@@ -1,0 +1,23 @@
+body{
+    background-color: yellow !important;
+}
+.navbar{
+    background-color: green !important;
+}
+.card-body{
+    padding: 4px;
+}
+#view-button{
+    padding: 2px 7px 2px 7px;
+    margin: 0 2px 0 2px;
+}
+#save-button{
+    padding: 2px 7px 2px 7px;
+    margin: 0 2px 0 2px;
+}
+.card-title{
+    margin: 0 0 0 5px;
+}
+.card-text{
+    margin: 0 0 0 5px;
+}
