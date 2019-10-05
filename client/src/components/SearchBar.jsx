@@ -20,3 +20,5 @@ export function SearchBar(){
         </div>
     );
 }
+
+onclick="this.href='listings/'+document.getElementById('zipCodeVal').value"

@@ -5,13 +5,13 @@ const axios = require('axios');
 const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use('/api', apiRoutes);
+app.use('/books', apiRoutes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebookdb");
@@ -22,12 +22,6 @@ app.get('/sample_route', (req, res) => {
   res.send('some sample text');
 });
 
-app.get("/books", (req, res) => {
-  axios
-    .get("https://www.googleapis.com/books/v1/volumes?q=", { params: req.query })
-    .then(({ data: { results } }) => res.json(results))
-    .catch(err => res.status(422).json(err));
-});
 
 
 if (process.env.NODE_ENV === "production") {
